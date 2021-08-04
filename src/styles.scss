@@ -1,0 +1,238 @@
+// General CSS
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 24px;
+}
+img {
+  max-width: 100%;
+}
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    list-style: none;
+}
+.btn:focus, .btn.focus:focus {
+  outline: none;
+  box-shadow: none;
+}
+.main {
+  height: 100vh;
+  position: relative;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #93d7ff;
+  }
+}
+
+.pagetitle h1{
+    color: #FFF;
+    position: absolute;
+    z-index: 9999999;
+    text-align: center;
+    padding-top: 20px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background: #000000;
+    padding-bottom: 20px;
+}
+
+.heading {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding-top: 15px;
+}
+.wrap {
+  align-items: center;
+  height: 100%;
+
+  .card {
+    box-shadow: rgb(0 0 0 / 10%) 4px 8px 8px -8px;
+    border: none;
+    z-index: 1;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+    border-radius: 0 !important;
+  }
+}
+.city-link {
+  cursor: pointer;
+}
+
+.city-img {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 100%;
+}
+
+.Manchester {
+  background-image: url('../src/assets/img/cities/Manchester.jpg');
+}
+
+.Paris {
+  background-image: url('../src/assets/img/cities/Paris.jpg');
+}
+
+.Helsinki {
+  background-image: url('../src/assets/img/cities/Helsinki.jpg');
+}
+
+.Florence {
+  background-image: url('../src/assets/img/cities/Florence.jpg');
+}
+
+.Barcelona {
+  background-image: url('../src/assets/img/cities/Barcelona.jpg');
+}
+
+.city-info {
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+  height: 100%;
+  position: relative;
+}
+
+.city-info::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.city-country {
+  z-index: 1;
+}
+
+.city-name span {
+  font-size: 13px;
+}
+
+.city-temp {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.sun-detail li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 10px 0;
+}
+.sun-detail li strong {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.sun-detail li span
+{
+  font-weight: 500
+}
+
+.sunRiseSet-media {
+  width: 20px;
+  vertical-align: top;
+}
+
+
+/*city details css*/
+
+.mainbox {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
+.mainbox::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.innerbox {
+  position: relative;
+  z-index: 1;
+  
+  .card {
+    font-size: 16px;
+    background-color: #000000;    
+    color: #fff;   
+    border-radius: 0; 
+    
+    span {
+      font-weight: 600;
+      font-size: 26px;
+      .sea-media {
+        width: 25px;
+      }
+    }
+  }
+  .sea-card {
+    position: relative;
+    background: #fff;
+    color: #29539b;
+  }  
+}
+
+.current-city {
+  color: #fff;
+  font-size: 70px;
+  font-weight: 600;
+}
+
+/*Ripple Effect*/
+.sea-card {
+  position: relative;
+}
+
+/*Media Query*/
+@media(max-width: 992px){
+  .main, .mainbox {
+    height: 100%;
+  }
+  .main .col, .mainbox .col {
+    flex: 0 0 100%;
+  }
+  .heading {
+    font-size: 36px;
+  }
+  .current-city {
+    font-size: 44px;
+  }
+}

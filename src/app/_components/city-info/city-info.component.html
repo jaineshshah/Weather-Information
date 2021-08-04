@@ -1,0 +1,29 @@
+<div class="mainbox {{cityDetails?.city.name}}">
+    <div class="container-fluid h-100">
+        <div class="row innerbox h-100">
+            <div class="col-12">
+                <a href="javascript:void(0);" class="back-btn btn mt-3" (click)="goToDashboard()">
+                    <img src="../../../assets/img/home_icon.svg" alt="image" width="40">
+                </a>
+                <h2 class="current-city text-center py-3" *ngIf='cityDetails'>
+                    {{cityDetails?.city.name}} 
+                    <span> ({{cityDetails?.city.country}})</span>
+                </h2>
+            </div>
+            <div class="col" *ngFor="let item of cityArray">
+                <div class="card p-3 py-5">
+                    <div class="text-center">
+                        <h2 class="mb-3">{{item.main.temp}} °C </h2>
+                        {{item.dt_txt | date : 'MM/dd/yy h:mm:ss a'}}
+                    </div>
+                </div>
+                <div class="card sea-card mb-3">
+                    <div class="d-flex justify-content-between align-items-center p-3">
+                        Sea Level 
+                        <span>{{item.main.sea_level}} 
+                        </span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

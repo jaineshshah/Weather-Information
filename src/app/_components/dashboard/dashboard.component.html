@@ -1,0 +1,39 @@
+<div class="main">
+  <div class="pagetitle">
+    <h1>Weather Information</h1>
+  </div>
+  <div class="container-fluid h-100">
+    <div class="row wrap">
+      <div class="col" *ngFor="let item of weatherInfo?.list">
+        <div class="card mt-3">
+          <div class="card-body p-0">
+            <div class="city-link" [routerLink]="['/city', item.name]">
+              <div class="city-img {{item.name}}">
+                <div class="city-info">
+                  <div class="city-country">
+                    <h4 class="city-name">{{item.name}}<span> ({{item.sys.country}})</span> </h4>
+                    <h2 class="city-temp">{{item.main.temp}}°</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="sun-detail py-2 px-3">
+                <ul class="p-0 m-0">
+                  <li>
+                    <strong>Sunrise</strong>
+                    <span>{{item.sys.sunrise * 1000 | date : 'h:mm:ss a'}}
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Sunset</strong>
+                    <span>{{item.sys.sunset * 1000 | date : 'h:mm:ss a'}}
+                    </span>
+                  </li>                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
